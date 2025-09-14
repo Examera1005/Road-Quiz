@@ -103,6 +103,11 @@ export default function QuestionManager() {
                 )}
               </div>
             ))}
+            {(!requests || requests.length === 0) && (
+              <div className="text-slate-500 text-center py-8">
+                Aucune demande de génération pour le moment
+              </div>
+            )}
           </div>
         </div>
 

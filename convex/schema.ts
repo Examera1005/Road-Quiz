@@ -1,5 +1,4 @@
-// @ts-nocheck
-import { defineSchema, defineTable } from "./_generated/server";
+import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({

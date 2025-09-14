@@ -1,8 +1,6 @@
-// @ts-nocheck
-import { action } from "./_generated/server";
+import { action, query, mutation } from "./_generated/server";
 import { api } from "./_generated/api";
 import { v } from "convex/values";
-import { query, mutation } from "./_generated/server";
 
 export const getRequest = query({
   args: { requestId: v.id("questionGeneration") },
