@@ -54,7 +54,7 @@ export const processQuestionGeneration = action({
       
       // Add questions to database
       const questionIds = await ctx.runMutation(api.questions.bulkAddQuestions, {
-        questions: questions.map(q => ({
+        questions: questions.map((q: any) => ({
           ...q,
           isAiGenerated: true
         }))
@@ -72,13 +72,13 @@ export const processQuestionGeneration = action({
       await ctx.runMutation(api.questionGeneration.updateStatus, {
         requestId,
         status: 'failed',
-        errorMessage: error.message
+        errorMessage: (error as Error).message
       });
     }
   }
 });
 
-async function generateQuestionsWithFreeAI(request) {
+async function generateQuestionsWithFreeAI(request: any) {
   const { category, count, difficulty, prompt } = request;
   
   // Option 1: Use local Ollama (free, runs on user's machine)
@@ -132,21 +132,21 @@ async function generateQuestionsWithFreeAI(request) {
       return parseAIResponse(data[0]?.generated_text || '');
     }
   } catch (hfError) {
-    console.log('HuggingFace API error:', hfError.message);
+    console.log('HuggingFace API error:', (hfError as Error).message);
   }
   
   // Fallback: Generate template-based questions
   return generateTemplateQuestions(category, count, difficulty);
 }
 
-function buildPrompt(category, count, difficulty) {
+function buildPrompt(category: string, count: number, difficulty: string) {
   const categoryDescriptions = {
     panneaux: 'traffic signs and road markings',
     priorites: 'right-of-way rules and traffic priorities', 
     securite: 'road safety, vehicle maintenance, and driving conditions'
   };
   
-  return `Generate ${count} multiple-choice questions about Swiss road law focusing on ${categoryDescriptions[category]}.
+  return `Generate ${count} multiple-choice questions about Swiss road law focusing on ${categoryDescriptions[category as keyof typeof categoryDescriptions]}.
 
 Requirements:
 - Difficulty level: ${difficulty}
@@ -173,7 +173,7 @@ Example format:
 Generate ${count} questions now:`;
 }
 
-function parseAIResponse(response) {
+function parseAIResponse(response: string) {
   try {
     // Try to extract JSON from response
     const jsonMatch = response.match(/\[[\s\S]*\]/);
@@ -188,7 +188,7 @@ function parseAIResponse(response) {
   return [];
 }
 
-function generateTemplateQuestions(category, count, difficulty) {
+function generateTemplateQuestions(category: string, count: number, difficulty: string) {
   // Fallback template-based generation when AI is unavailable
   const templates = {
     panneaux: [
@@ -220,7 +220,7 @@ function generateTemplateQuestions(category, count, difficulty) {
     ]
   };
   
-  const categoryTemplates = templates[category] || templates.panneaux;
+  const categoryTemplates = templates[category as keyof typeof templates] || templates.panneaux;
   const questions = [];
   
   for (let i = 0; i < Math.min(count, 10); i++) {
