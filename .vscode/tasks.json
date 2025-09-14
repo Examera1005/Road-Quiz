@@ -1,0 +1,117 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install and build Road Quiz",
+			"type": "shell",
+			"command": "npm install",
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Road Quiz",
+			"type": "shell",
+			"command": "npm run build",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Dev Road Quiz",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true
+		}
+	]
+}

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { ReactNode } from 'react'
 import Link from 'next/link'
+import Providers from './providers'
 
 export const metadata = {
   title: 'Road Quiz Suisse',
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       <body className="min-h-screen antialiased">
+        <Providers>
         <div className="pointer-events-none fixed inset-0 -z-10 select-none">
           <svg className="absolute -left-40 top-20 h-[600px] w-[600px] opacity-20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -34,13 +36,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link href="/quiz/priorites" className="hover:underline">Priorités</Link>
               <Link href="/quiz/securite" className="hover:underline">Sécurité</Link>
               <Link href="/tableau-de-bord" className="hover:underline">Mes résultats</Link>
+              <Link href="/admin" className="hover:underline">Admin</Link>
             </div>
           </nav>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+  <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
         <footer className="mt-20 border-t py-6 text-center text-sm text-slate-500">
           <p>Contenu pédagogique non-officiel à but d'entraînement. Vérifiez toujours la loi et la LCR.</p>
         </footer>
+  </Providers>
       </body>
     </html>
   )

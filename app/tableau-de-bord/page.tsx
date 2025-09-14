@@ -1,11 +1,12 @@
 import { AuthGate } from '@/components/AuthGate'
+import DashboardResults from '@/components/DashboardResults'
 
 export default function Dashboard() {
   return (
     <AuthGate>
-      <div className="grid gap-4">
+      <div className="grid gap-6">
         <h1>Mes résultats</h1>
-        <p className="text-slate-600">Historique à venir (stockage via Convex).</p>
+        <DashboardResults />
       </div>
     </AuthGate>
   )

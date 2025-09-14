@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useMemo, useState } from 'react'
-import { clsx } from 'clsx'
+import clsx from 'clsx'
 
 export type Choice = { id: string; text: string }
 export type Question = {
@@ -36,13 +36,13 @@ export function QuizCard({
 
   const select = (choiceId: string) => {
     if (!q) return
-    setAnswers(prev => ({ ...prev, [q.id]: choiceId }))
+    setAnswers((prev: Record<string, string>) => ({ ...prev, [q.id]: choiceId }))
   }
   const next = () => {
-    if (index < total - 1) setIndex(i => i + 1)
+    if (index < total - 1) setIndex((i: number) => i + 1)
     else onFinish?.({ correct, total, answers })
   }
-  const previous = () => setIndex(i => Math.max(0, i - 1))
+  const previous = () => setIndex((i: number) => Math.max(0, i - 1))
 
   if (!q) return null
 

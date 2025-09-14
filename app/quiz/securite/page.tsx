@@ -1,5 +1,6 @@
-import { QuizCard, type Question } from '@/components/QuizCard'
+import { type Question } from '@/components/QuizCard'
 import { AuthGate } from '@/components/AuthGate'
+import QuizRunner from '@/components/QuizRunner'
 
 const questions: Question[] = [
   {
@@ -31,7 +32,7 @@ const questions: Question[] = [
 export default function Page() {
   return (
     <AuthGate>
-      <QuizCard questions={questions} />
+      <QuizRunner questions={questions} />
     </AuthGate>
   )
 }

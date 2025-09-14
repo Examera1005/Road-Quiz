@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export function AuthGate({ children }: { children: React.ReactNode }) {
   const [userId, setUserId] = useState<string | null>(null)
@@ -31,7 +31,12 @@ export function AuthGate({ children }: { children: React.ReactNode }) {
         <h2 className="mb-2">Connexion rapide</h2>
         <p className="text-sm text-slate-600 mb-4">Pas de mot de passe. Choisissez un nom d'affichage pour sauvegarder vos résultats.</p>
         <div className="flex items-center gap-2">
-          <input className="flex-1 rounded-lg border px-3 py-2" placeholder="Votre nom" value={name} onChange={e => setName(e.target.value)} />
+          <input
+            className="flex-1 rounded-lg border px-3 py-2"
+            placeholder="Votre nom"
+            value={name}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+          />
           <button className="btn" onClick={signIn}>Commencer</button>
         </div>
       </div>

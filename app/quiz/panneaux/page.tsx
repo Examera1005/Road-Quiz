@@ -1,12 +1,13 @@
-import { QuizCard, type Question } from '@/components/QuizCard'
+import { type Question } from '@/components/QuizCard'
 import { AuthGate } from '@/components/AuthGate'
+import QuizRunner from '@/components/QuizRunner'
 
 const questions: Question[] = [
   {
     id: 'p1',
     category: 'panneaux',
     prompt: 'Que signifie ce panneau triangulaire avec bord rouge et un point d’exclamation ?',
-    img: '/svg/danger.svg',
+  img: '/svg/danger.svg',
     choices: [
       { id: 'a', text: 'Danger général' },
       { id: 'b', text: 'Route prioritaire' },
@@ -20,7 +21,7 @@ const questions: Question[] = [
     id: 'p2',
     category: 'panneaux',
     prompt: 'Que signifie ce panneau rond à fond bleu avec une flèche blanche courbe ?',
-    img: '/svg/obligation-contourner-droite.svg',
+  img: '/svg/obligation-contourner-droite.svg',
     choices: [
       { id: 'a', text: 'Contourner à droite obligatoire' },
       { id: 'b', text: 'Virage dangereux à droite' },
@@ -34,7 +35,7 @@ const questions: Question[] = [
 export default function Page() {
   return (
     <AuthGate>
-      <QuizCard questions={questions} />
+      <QuizRunner questions={questions} />
     </AuthGate>
   )
 }
