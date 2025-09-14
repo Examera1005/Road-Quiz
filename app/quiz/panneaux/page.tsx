@@ -1,7 +1,7 @@
 import { AuthGate } from '@/components/AuthGate'
 import DynamicQuizRunner from '@/components/DynamicQuizRunner'
 
-export default function Page() {
+export default function PanneauxPage() {
   return (
     <AuthGate>
       <DynamicQuizRunner
