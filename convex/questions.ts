@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
+import { api } from "./_generated/api";
 
 export const getQuestionsByCategory = query({
   args: { 
@@ -114,7 +115,7 @@ export const generateQuestionsWithAI = mutation({
     });
     
     // Schedule AI generation (this would be handled by a background action/cron)
-    await ctx.scheduler.runAfter(0, "processQuestionGeneration", { requestId });
+    await ctx.scheduler.runAfter(0, api.questionGeneration.processQuestionGeneration, { requestId });
     
     return requestId;
   }

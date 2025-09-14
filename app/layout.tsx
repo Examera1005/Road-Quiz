@@ -35,6 +35,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link href="/quiz/panneaux" className="hover:underline">Panneaux</Link>
               <Link href="/quiz/priorites" className="hover:underline">Priorités</Link>
               <Link href="/quiz/securite" className="hover:underline">Sécurité</Link>
+              <Link href="/quiz/global" className="hover:underline font-semibold text-blue-600">Quiz Global</Link>
+              <Link href="/apprentissage" className="hover:underline text-green-600">📚 Apprentissage</Link>
               <Link href="/tableau-de-bord" className="hover:underline">Mes résultats</Link>
               <Link href="/admin" className="hover:underline">Admin</Link>
             </div>
